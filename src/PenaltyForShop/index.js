@@ -1,4 +1,4 @@
-const input = "YYYY";
+const input = "YYNY";
 let zerothHourSum = 0;
 const penaltyArray = [];
 const calculatedPenalty = [];
@@ -26,5 +26,12 @@ for (let index = 0; index < input.length; index++) {
 
 console.log(penaltyArray);
 console.log(zerothHourSum, calculatedPenalty);
+calculatedPenalty.splice(0, 0, zerothHourSum);
+console.log(
+  calculatedPenalty.reduce((acc, curr, i) => {
+    Math.min(acc, curr);
+    return i;
+  })
+);
 
-console.log(Math.min(zerothHourSum));
+console.log(calculatedPenalty);
